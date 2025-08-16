@@ -8,6 +8,7 @@
 * Licensed under MIT (https://github.com/tabler/tabler/blob/master/LICENSE)
 -->
 <html lang="en">
+  <link rel="stylesheet" href="css/slider.css">
   <head>
     <meta charset="utf-8" />
     <meta
@@ -103,46 +104,43 @@
         </div>
       </div>
     </header>
-    <header
-      class="img-bg"
-      style="background-image: url(../static/marketing/main-photo.jpeg)"
-    >
-      <div
-        class="hero position-relative bg-primary py-12"
-        style="--tblr-bg-opacity: 0.3"
-      >
-        <div class="container-narrow">
-          <h1 class="hero-title text-white">Selamat Datang di Desa Lahimbua</h1>
-          <p class="hero-description mb-5 text-white text-opacity-50">
-            It's time to find the home of your dreams, and you search begins
-            here. We make it easy to find the property that fits your needs and
-            budget.
-          </p>
-          <div class="row gx-5 justify-content-center">
-            <div class="col-xl-6 col-lg-8 text-center">
-              <form
-                novalidate=""
-                class="row row-cols-1 row-cols-md-auto g-3 align-items-center"
-              >
-                <div class="col flex-grow-1">
-                  <input
-                    id="inputEmail"
-                    type="text"
-                    placeholder="Search properties near you..."
-                    class="form-control form-control-solid"
-                  />
-                </div>
-                <div class="col">
-                  <button type="submit" class="btn btn-teal fw-500">
-                    Search
-                  </button>
-                </div>
-              </form>
-            </div>
+<header class="img-bg slider">
+    <!-- Slide Gambar -->
+    <div class="slide active" style="background-image: url('../static/marketing/main-photo.jpeg')"></div>
+    <div class="slide active" style="background-image: url('../static/marketing/main-photo2.jpg')"></div>
+
+    <!-- Panah Navigasi -->
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+
+    <!-- Titik Indikator -->
+    <div class="dots"></div>
+
+    <!-- Isi konten hero -->
+    <div class="">
+      <div class="container-narrow">
+        <h1 class="hero-title text-white">Selamat Datang di Desa Lahimbua</h1>
+        <p class="hero-description mb-5 text-white text-opacity-50">
+          It's time to find the home of your dreams, and you search begins
+          here. We make it easy to find the property that fits your needs and
+          budget.
+        </p>
+        <div class="row gx-5 justify-content-center">
+          <div class="col-xl-6 col-lg-8 text-center">
+            <form class="row row-cols-1 row-cols-md-auto g-3 align-items-center" novalidate>
+              <div class="col flex-grow-1">
+                <input id="inputEmail" type="text" placeholder="Search properties near you..." class="form-control form-control-solid"/>
+              </div>
+              <div class="col">
+                <button type="submit" class="btn btn-teal fw-500">Search</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
+
     <section class="section section-white">
       <svg
         class="section-divider"
@@ -876,5 +874,6 @@
     <!-- Tabler Core -->
     <script src="../dist/js/tabler.min.js?1738096682" defer></script>
     <script src="../dist/js/demo.min.js?1738096682" defer></script>
+    <script src="js/slider.js"></script>
   </body>
 </html>
