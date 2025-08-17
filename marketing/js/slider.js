@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Auto slide tiap 2 detik
   function startAutoSlide() {
-    slideInterval = setInterval(nextSlide, 2000);
+    slideInterval = setInterval(nextSlide, 5000);
   }
 
   function stopAutoSlide() {
