@@ -1,55 +1,92 @@
+/* --- Bagian Utama Slider --- */
 .slider {
   position: relative;
-  height: 500px; /* sesuaikan tinggi header */
+  height: 100vh; /* Mengisi seluruh tinggi layar */
+  width: 100%;
   overflow: hidden;
+  color: white;
 }
 
+/* --- Lapisan Gambar --- */
 .slide {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-size: contain;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover; /* Diubah agar gambar tidak pecah */
   background-position: center;
- 
   opacity: 0;
-  transition: opacity 0.8s ease-in-out;
+  transition: opacity 1.2s ease-in-out;
+  z-index: 1; /* Lapisan paling bawah */
 }
 
 .slide.active {
   opacity: 1;
 }
 
+/* --- (KODE BARU) Lapisan Konten Teks --- */
+/* Ini adalah bagian penting yang ditambahkan */
+.hero-content {
+  position: relative; /* Bisa relative atau absolute */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Memenuhi tinggi header */
+  text-align: center;
+  padding: 0 20px;
+  z-index: 5; /* Pastikan berada di atas lapisan gambar (.slide) */
+  /* Efek bayangan pada teks agar lebih terbaca */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+
+/* --- Tombol Navigasi --- */
 .prev, .next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.4);
   color: white;
   border: none;
-  padding: 10px;
+  padding: 10px 15px;
   cursor: pointer;
   font-size: 24px;
-  z-index: 10;
+  z-index: 10; /* Lapisan paling atas */
+  border-radius: 4px;
+  transition: background 0.3s;
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
 
+.prev { left: 20px; }
+.next { right: 20px; }
+
+/* --- Indikator Titik (Dots) --- */
 .dots {
   position: absolute;
-  bottom: 15px;
+  bottom: 25px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 6px;
+  gap: 10px;
   z-index: 10;
 }
 
 .dots span {
-  width: 12px; height: 12px;
-  background: #bbb;
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dots span:hover {
+    background: rgba(255, 255, 255, 0.8);
 }
 
 .dots span.active {
